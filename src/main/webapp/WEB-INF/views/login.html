@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Войти</title>
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+</head>
+<body>
+<div th:align="center">
+    <h1>Registration System of Applicants</h1>
+    <form th:action="@{/login}" method="post">
+        <label for="username">Имя пользователя:</label><br/>
+        <input type="text" id="username" name="username" autofocus="autofocus"/><br/>
+        <label for="password">Пароль:</label><br/>
+        <input type="password" id="password" name="password"/><br/><br/>
+        <input type="submit" value="Войти"/>
+    </form>
+</div>
+</body>
+</html>

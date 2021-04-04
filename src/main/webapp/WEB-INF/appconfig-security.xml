@@ -9,12 +9,12 @@
 
     <!-- Static content -->
     <http pattern="/resources/**"
-          security="none" />
+          security="none"/>
 
     <http auto-config="true">
 
-        <intercept-url pattern="/**"
-                       access="hasAnyRole('ROLE_ADMIN', 'ROLE_REGISTRAR')"/>
+        <intercept-url pattern="/applicants/**" access="hasAnyRole('ROLE_REGISTRAR')"/>
+        <intercept-url pattern="/users/**" access="hasAnyRole('ROLE_ADMIN')"/>
 
         <form-login login-page="/login"
                     authentication-failure-url="/login?error"
