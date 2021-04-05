@@ -29,7 +29,10 @@ public class UserDaoJpa implements UserDao {
 
     @Override
     public User findByUsername(String username) {
-        return null;
+        return entityManager.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class)
+                .setParameter("username", username)
+                .getResultList()
+                .get(0);
     }
 
     @Override

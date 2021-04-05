@@ -18,5 +18,5 @@ public class FormOfEducation {
     private String name;
 
     @OneToMany(mappedBy = "formOfEducation")
-    private List<SpecialtyFormOfEducation> specialtyFormOfEducation;
+    private List<SpecialtyAndFormOfEducation> specialtyAndFormOfEducation;
 }

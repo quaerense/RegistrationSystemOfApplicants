@@ -67,5 +67,8 @@ public class Applicant {
 
     @OneToMany(mappedBy = "applicant")
     private List<ApplicantExam> applicantExams;
+
+    @OneToMany(mappedBy = "applicant")
+    private List<SpecialtyAndFormOfEducationOfApplicant> specialtiesAndFormsOfEducationOfApplicant;
 }
 

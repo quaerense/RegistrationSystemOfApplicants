@@ -29,7 +29,7 @@ public class Specialty {
     private LevelOfEducation levelOfEducation;
 
     @OneToMany(mappedBy = "specialty")
-    private List<SpecialtyFormOfEducation> specialtyFormOfEducations;
+    private List<SpecialtyAndFormOfEducation> specialtyAndFormOfEducations;
 
     @ManyToMany
     @JoinTable(name = "specialty_exam",

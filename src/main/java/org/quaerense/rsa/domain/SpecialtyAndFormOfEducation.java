@@ -3,18 +3,20 @@ package org.quaerense.rsa.domain;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Data
 @Entity
-@Table(name = "specialty_form_of_education")
-public class SpecialtyFormOfEducation implements Serializable {
+@Table(name = "specialty_and_form_of_education")
+public class SpecialtyAndFormOfEducation {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
     @ManyToOne
     @JoinColumn(name = "specialty_id")
     private Specialty specialty;
 
-    @Id
     @ManyToOne
     @JoinColumn(name = "form_of_education_id")
     private FormOfEducation formOfEducation;
