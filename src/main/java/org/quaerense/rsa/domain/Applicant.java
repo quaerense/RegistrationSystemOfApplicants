@@ -1,6 +1,7 @@
 package org.quaerense.rsa.domain;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -9,7 +10,8 @@ import javax.validation.constraints.NotNull;
 import java.sql.Date;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "applicants")
 public class Applicant {
@@ -19,12 +21,12 @@ public class Applicant {
     private Long id;
 
     @NotNull(message = "Поле обязательно для заполнения")
-    @NotBlank(message = "Поле не может быть пустым или пробелом")
+    @NotBlank(message = "Поле обязательно для заполнения")
     @Column(name = "first_name")
     private String firstName;
 
     @NotNull(message = "Поле обязательно для заполнения")
-    @NotBlank(message = "Поле не может быть пустым или пробелом")
+    @NotBlank(message = "Поле обязательно для заполнения")
     @Column(name = "last_name")
     private String lastName;
 
@@ -44,9 +46,17 @@ public class Applicant {
     private Date passportIssuedOn;
 
     @NotNull(message = "Поле обязательно для заполнения")
-    @NotBlank(message = "Поле не может быть пустым или пробелом")
+    @NotBlank(message = "Поле обязательно для заполнения")
     @Column(name = "passport_issued_by")
     private String passportIssuedBy;
+
+    @NotNull(message = "Поле обязательно для заполнения")
+    @NotBlank(message = "Поле обязательно для заполнения")
+    @Column(name = "taxpayer_id")
+    private Long taxpayerId;
+
+    @Column(name = "date_of_birth")
+    private Date dateOfBirth;
 
     @Column(name = "phone_number")
     private String phone_number;

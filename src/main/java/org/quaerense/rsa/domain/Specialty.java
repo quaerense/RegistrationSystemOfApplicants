@@ -1,11 +1,13 @@
 package org.quaerense.rsa.domain;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "specialties")
 public class Specialty {
@@ -29,7 +31,7 @@ public class Specialty {
     private LevelOfEducation levelOfEducation;
 
     @OneToMany(mappedBy = "specialty")
-    private List<SpecialtyAndFormOfEducation> specialtyAndFormOfEducations;
+    private List<SpecialtyAndFormOfEducation> specialtiesAndFormsOfEducation;
 
     @ManyToMany
     @JoinTable(name = "specialty_exam",

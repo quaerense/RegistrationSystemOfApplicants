@@ -1,19 +1,24 @@
 package org.quaerense.rsa.service;
 
+import org.quaerense.rsa.domain.Role;
 import org.quaerense.rsa.domain.User;
 
 import java.util.List;
 
 public interface UserService {
-    void create(User user);
+    void createUser(User user);
 
-    List<User> findAll();
+    List<User> findAllUsers();
 
-    User findById(Long id);
+    User findUserById(Long id);
 
-    User findByUsername(String username);
+    User findUserByUsername(String username);
 
-    void update(User user);
+    Role findRoleById(Long id);
 
-    void delete(User user);
+    List<Role> findAllRoles();
+
+    void updateUser(User user);
+
+    void deleteUser(User user);
 }
